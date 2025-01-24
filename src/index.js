@@ -7,5 +7,5 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root') // Ensure this matches the ID in `public/index.html`
+  document.getElementById('root') // This must match the `id="root"` in `index.html`.
 );
