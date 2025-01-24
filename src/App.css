@@ -1,14 +1,19 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9; /* Light gray */
+  background-color: #f4f4f9;
 }
 
 .App {
   text-align: center;
-  padding: 20px;
 }
 
-h1 {
-  color: #282c34;
+header, footer {
+  background-color: #282c34;
+  color: white;
+  padding: 10px;
+}
+
+main {
+  padding: 20px;
 }

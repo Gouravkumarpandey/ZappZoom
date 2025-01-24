@@ -1,11 +1,15 @@
 import React from 'react';
+import Navbar from './components/Navbar';
+import RideComparison from './components/RideComparison';
+import Footer from './components/Footer';
 import './App.css';
-import TestComponent from './components/TestComponent';
 
 function App() {
   return (
     <div className="App">
-      <TestComponent />
+      <Navbar />
+      <RideComparison />
+      <Footer />
     </div>
   );
 }

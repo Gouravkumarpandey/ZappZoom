@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import mockData from '../mockData';
 
-const RideComparison = ({ appName, price, eta }) => {
+function RideComparison() {
+  const [rides, setRides] = useState([]);
+
+  useEffect(() => {
+    // Simulate fetching ride data
+    setRides(mockData);
+  }, []);
+
   return (
-    <div className="ride-card">
-      <h3>{appName}</h3>
-      <p>Price: ₹{price}</p>
-      <p>ETA: {eta} mins</p>
-    </div>
+    <main>
+      <h2>Compare Ride Options</h2>
+      <div>
+        {rides.map((ride) => (
+          <div key={ride.id} style={{ marginBottom: '20px', border: '1px solid #ccc', padding: '10px' }}>
+            <h3>{ride.appName}</h3>
+            <p>Cost: ₹{ride.cost}</p>
+            <p>Car Type: {ride.carType}</p>
+          </div>
+        ))}
+      </div>
+    </main>
   );
-};
+}
 
 export default RideComparison;
