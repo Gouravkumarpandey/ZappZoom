@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import RideComparison from './components/RideComparison';
+import { fetchRideData } from './utils/api';
 
 function App() {
+  const rides = fetchRideData();
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>ZapZoom</h1>
+        <p>Compare rides from multiple apps!</p>
       </header>
+      <main>
+        {rides.map((ride, index) => (
+          <RideComparison
+            key={index}
+            appName={ride.appName}
+            price={ride.price}
+            eta={ride.eta}
+          />
+        ))}
+      </main>
     </div>
   );
 }
